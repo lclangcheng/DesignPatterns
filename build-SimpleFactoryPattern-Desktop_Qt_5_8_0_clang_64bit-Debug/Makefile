@@ -49,9 +49,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../SimpleFactoryPattern/main.cpp \
-		../SimpleFactoryPattern/simplefactory.cpp 
+		../SimpleFactoryPattern/simplefactory.cpp \
+		../SimpleFactoryPattern/strategy.cpp 
 OBJECTS       = main.o \
-		simplefactory.o
+		simplefactory.o \
+		strategy.o
 DIST          = ../../../../Qt5.8.0/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt5.8.0/5.8/clang_64/mkspecs/qdevice.pri \
 		../../../../Qt5.8.0/5.8/clang_64/mkspecs/features/device_config.prf \
@@ -224,8 +226,10 @@ DIST          = ../../../../Qt5.8.0/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt5.8.0/5.8/clang_64/mkspecs/features/lex.prf \
 		../SimpleFactoryPattern/SimpleFactoryPattern.pro simplefactory.h \
 		macro.h \
-		classes.h ../SimpleFactoryPattern/main.cpp \
-		../SimpleFactoryPattern/simplefactory.cpp
+		classes.h \
+		strategy.h ../SimpleFactoryPattern/main.cpp \
+		../SimpleFactoryPattern/simplefactory.cpp \
+		../SimpleFactoryPattern/strategy.cpp
 QMAKE_TARGET  = SimpleFactoryPattern
 DESTDIR       = 
 TARGET        = SimpleFactoryPattern
@@ -633,6 +637,9 @@ main.o: ../SimpleFactoryPattern/main.cpp ../SimpleFactoryPattern/classes.h \
 simplefactory.o: ../SimpleFactoryPattern/simplefactory.cpp ../SimpleFactoryPattern/simplefactory.h \
 		../SimpleFactoryPattern/macro.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o simplefactory.o ../SimpleFactoryPattern/simplefactory.cpp
+
+strategy.o: ../SimpleFactoryPattern/strategy.cpp ../SimpleFactoryPattern/strategy.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o strategy.o ../SimpleFactoryPattern/strategy.cpp
 
 ####### Install
 

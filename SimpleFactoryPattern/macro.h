@@ -6,4 +6,10 @@ enum CTYPE {
     COREB = 1
 };
 
+enum CHARGE {
+    NORMAL = 0,
+    REBATE,
+    RETURN
+};
+
 #endif // MACRO_H

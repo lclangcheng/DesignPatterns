@@ -1,6 +1,11 @@
 #ifndef STRATEGY_H
 #define STRATEGY_H
-#include "macro.h"
+
+enum CHARGE {
+    NORMAL = 0,
+    REBATE,
+    RETURN
+};
 
 class CashSuper
 {
@@ -20,7 +25,7 @@ public:
     CashRebate(double moneyRebate);
     double accptCash(double money);
 private:
-    double moneyRebate = 0;
+    double moneyRebate;
 };
 
 class CashReturn: public CashSuper
@@ -29,8 +34,8 @@ public:
     CashReturn(double moneyCondition, double moneyReturn);
     double accptCash(double money);
 private:
-    double moneyCondition = 0;
-    double moneyReturn = 0;
+    double moneyCondition;
+    double moneyReturn;
 };
 
 class CashContext
@@ -39,7 +44,7 @@ public:
     CashContext(enum CHARGE chargeType);
     double getResult(double money);
 private:
-    CashSuper* cashSuper = nullptr;
+    CashSuper* cashSuper;
 };
 
 

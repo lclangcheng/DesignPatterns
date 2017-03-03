@@ -4,9 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    strategy.cpp
+    strategy.cpp \
+    main.cpp
 
 HEADERS += \
-    classes.h \
     macro.h \
     strategy.h

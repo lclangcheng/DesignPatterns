@@ -1,5 +1,6 @@
 #include <iostream>
-#include "classes.h"
+#include "strategy.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])
